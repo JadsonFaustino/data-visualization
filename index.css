@@ -1,0 +1,566 @@
+@import url('https://fonts.googleapis.com/css2?family=Gemunu+Libre&display=swap');
+
+html{
+	margin: 0;
+	padding: 0;
+}
+
+body{
+	background: #ddd;
+	color: black;
+	display: flex;
+	flex-wrap: wrap;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	font-family: "Arial";
+	margin: 0;
+	padding: 0;
+	padding-bottom: 20px;
+}
+
+.themeButton{
+	height: 30px;
+	width: 30px;
+	background-image: url("./moon.png");
+	background-size: 100% auto;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-color: transparent;
+	filter: brightness(0.0);
+	position: fixed;
+	top: 5px;
+	left: 5px;
+	cursor: pointer;
+	opacity: 0.5;
+	transition: opacity 0.3s;
+}
+
+.themeButton:hover{
+	opacity: 1;
+	transition: opacity 0.3s;
+}
+
+#painel{
+	display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
+	padding: 10px;
+	margin-top: 20px;
+}
+
+#painel label{
+	font-size: 1.5em;
+	margin: 10px;
+	font-family: 'Gemunu Libre', sans-serif;
+}
+
+#painel p{
+	font-family: 'Gemunu Libre', sans-serif;
+	font-size: 1.2em;
+	margin: 10px auto;
+}
+
+#painel #csv{
+	display: none;
+}
+
+#painel .sendFile{
+	border-radius: 10px;
+	border: double 2px black;
+	padding: 5px 10px;
+	cursor: pointer;
+	transition: all 0.3s;
+}
+
+#painel .sendFile:hover, #painel #button:hover, #button_graph:hover{
+	border-color: red;
+	color: red;
+	cursor: pointer;
+	transition: all 0.3s;
+}
+
+#painel #painel_csv{
+	display: flex;
+	flex-wrap: wrap;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+#painel #painel_csv::after{
+	content: "";
+	width: 50vw;
+	min-width: 250px;
+	height: 3px;
+	background-color: black;
+	margin-top: 10px;
+}
+
+#painel #button, #button_graph{
+	height: 40px;
+	padding: 5px 10px;
+	font-size: 1.2em;
+	border-radius: 10px;
+	margin: 10px;
+}
+
+select{
+	margin: 10px;
+	height: 40px;
+	font-size: 1.2em;
+}
+
+#closePainel_graph{
+	height: 40px;
+	width: 40px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	vertical-align: middle;
+	align-self: center;
+	padding-bottom: 2px;
+	padding-left: 2px;
+	font-size: 4em;
+	position: fixed;
+	color: red;
+	top: 10px;
+	z-index: 11;
+	cursor: pointer;
+	border-radius: 100%;
+	transition: all 0.3s;
+}
+
+#closePainel_graph:hover{
+	background-color: rgba(0,0,0,0.3);
+}
+
+#modal_settings{
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	justify-content: center;
+	align-items: center;
+	background-color: rgba(0, 0, 0, 0.7);
+	display: none;
+	top: 0;
+	z-index: 12;
+}
+
+#painel_graph{
+	display: flex;
+	position: fixed;
+	z-index: 10;
+	justify-content: flex-start;
+	align-items: center;
+	top: 10vh;
+	background-color: #eee;
+	flex-direction: column;
+	max-width: 80vw;
+	margin: auto;
+	max-height: 80vh;
+	padding: 0px 10px;
+	overflow: auto;
+	transition: height 0.5s;
+	border: solid 2px black;
+	box-shadow: 0px 0px 20px black;
+	font-family: 'Gemunu Libre', sans-serif;
+	border: solid 2px white;
+}
+
+#painel_graph::-webkit-scrollbar{
+	width: 10px;
+	background: #bbb;
+}
+#painel_graph::-webkit-scrollbar-thumb{
+	border-radius: 10px;
+	background-color: #999;
+}
+
+#painel_graph::-webkit-scrollbar-thumb{
+  border-radius: 10px;
+}
+
+#painel_graph h2{
+	font-size: 2em;
+	text-decoration: underline;
+	font-variant-caps: petite-caps;
+	text-align: center;
+}
+
+#painel_graph table tr td{
+	padding: 10px 0px;
+	/*text-align: center;*/
+	vertical-align: middle;
+	align-items: center;
+	height: 100%;
+}
+
+#painel_graph table tr td:nth-child(2n){
+	text-align: left;
+	align-self: flex-start;
+	justify-content: flex-start;
+}
+
+#painel_graph table tr td:nth-child(2n + 1){
+	align-self: flex-end;
+	justify-content: flex-end;
+	text-align: right;
+}
+
+#painel_graph table tr td table tr td{
+	margin-right: 0;
+	text-align: right;
+	align-self: flex-end;
+}
+
+input[type=checkbox]{
+	width: 30px;
+	height: 30px;
+}
+
+#painel_graph label{
+	font-size: 1.2em;
+	margin: auto;
+	margin-right: 10px;
+	user-select: none;
+}
+
+#painel_graph input{
+	font-size: 1.2em;
+	height: 30px;
+	border-radius: 5px;
+	text-align: left;
+	padding-left: 5px;
+	border: solid 1px black;
+}
+
+#painel_graph select{
+	font-family: 'Gemunu Libre', sans-serif;
+	height: 35px;
+	padding: 5px;
+}
+
+#painel_graph input[type=text]::placeholder{
+	font-style: italic;
+	font-family: 'Gemunu Libre', sans-serif;
+}
+
+#painel_graph input[type=color]{
+	width: 200px;
+}
+
+#painel_graph input[type=number]{
+	width: 50px;
+}
+
+#painel_graph h3{
+	text-align: center;
+	font-size: 1.5em;
+	text-decoration: underline;
+}
+
+#painel_graph #addColor{
+	display: inline-flex;
+	justify-content: center;
+	align-items: center;
+	border: solid 1px black;
+	font-size: 2em;
+	text-align: center;
+	width: 20px;
+	height: 20px;
+	padding: 0px;
+	margin: auto 10px;
+	cursor: pointer;
+	transition: all 0.3s;
+}
+
+#painel_graph #addColor:hover{
+	transition: all 0.3s;
+	border-color: red;
+	color: red;
+}
+
+#painel_graph .inputsColors{
+	position: relative;
+	margin: 0;
+	padding: 0;
+}
+
+#out{
+	word-wrap: break-word;
+	margin: auto;
+	padding: 20px;
+	text-align: center;
+	overflow: hidden;
+	font-family: 'Gemunu Libre', sans-serif;
+}
+
+#out h2{
+	margin-top: 0; 
+	font-size: 1.5em;
+}
+
+#out #dataset{
+	overflow: auto;
+	max-height: 200px;
+	max-width: calc(90vw - 25px);
+}
+
+#out #dataset table{
+	overflow: hidden;
+	display: inline-block;
+	box-sizing: border-box;
+}
+
+#out #dataset table *{
+	text-align: center;
+	border-collapse: collapse;
+	box-sizing: border-box;
+}
+
+#out #dataset table tbody tr:hover{
+	background-color: #ccc;
+	box-shadow: inset 0px 1px 0px black, inset 0px -1px 0px black;
+}
+
+/*@override*/
+#out #dataset table tbody tr td.marked{
+	color: green !important;
+}
+
+#out #dataset table tbody tr:nth-child(1){
+	color: red;
+	user-select: none;
+	cursor: pointer;
+}
+
+#out #dataset table tbody tr td:nth-child(1){
+	color: red;
+	font-weight: bold;
+	user-select: none;
+	cursor: pointer;
+}
+
+#out #dataset table tbody tr td{
+	margin: 0;
+	padding: 0px 3px;
+	height: 25px;
+	/*cursor: pointer;*/
+}
+
+#out #dataset table tbody tr, #out #dataset table tbody td{
+	position: relative;
+}
+
+#out #dataset table tbody tr td:hover::after { 
+    background-color: #ccc;
+    content: '';  
+    height: 10000px;    
+    left: 0;
+    position: absolute;  
+    top: -5000px;
+    width: 100%;
+    z-index: -1;        
+    box-shadow: inset 1px 0px 0px black, inset -1px 0px 0px black;
+}
+
+#out #dataset table tr:nth-child(1){
+	font-weight: bold;
+	cursor: pointer;
+}
+
+.info{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	align-self: center;
+}
+
+#painel_graph .info{
+	display: flex;
+	flex-direction: column;
+	align-self: flex-start;
+	justify-content: flex-start;
+	align-items: flex-start;
+}
+#painel_graph .info span{
+	margin: auto 0px;
+	align-self: flex-start;
+}
+#painel_graph .info div{
+	margin-left: 30px;
+	margin-top: -100px;
+	align-self: flex-start;
+}
+
+.info div{
+	position: absolute;
+	height: auto;
+	width: 150px;
+	border: solid 1px white;
+	background-color: rgba(0, 0, 0, 0.99);
+	border-radius: 5px;
+	display: flex;
+	flex-direction: column;
+	margin-left: 220px;
+	padding: 10px;
+	font-family: "Arial";
+	font-size: 0.7em;
+	align-items: center;
+	z-index: 10;
+	color: white;
+	text-align: justify;
+	opacity: 0;
+	transition: all 0.3s;
+}
+
+.info div h4{
+	margin: 5px auto;
+	color: gold;
+	font-variant-caps: all-small-caps;
+	font-size: 1.2em;
+	text-align: center;
+}
+.info div b{
+	margin: 5px auto;
+}
+.info div p{
+	margin: 0px auto;
+}
+
+.info span{
+	cursor: pointer;
+	font-family: 'Arial';
+	text-align: center;
+	align-self: center;
+	vertical-align: middle;
+	justify-content: center;
+	align-items: center;
+	color: black;
+	font-weight: bolder;
+	font-size: 1.5em;
+	border-radius: 100%;
+	border-color: black;
+	border-style: solid;
+	border-width: 1px;
+	height: 25px;
+	width: 25px;
+	margin: 10px;
+}
+
+.info span:hover{
+	color: red;
+	border-color: red;
+}
+
+.info span:hover + div{
+	opacity: 1;
+	transition: all 0.3s;
+}
+
+#interest_data{
+	display: none;
+	flex-direction: column;
+	justify-content: flex-end;
+	align-items: flex-end;
+	margin-bottom: 20px;
+	font-family: 'Gemunu Libre', sans-serif;
+}
+
+.inline{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: row;
+}
+
+#interest_data h3{
+	font-size: 1.5em;
+	margin: 5px auto;
+	text-align: center;
+	align-self: center;
+	float: right;
+}
+
+#interest_data label{
+	font-size: 1.2em;
+	text-align: left;
+	align-self: flex-start;
+	width: 100px;
+}
+
+#interest_data input[type=text]{
+	width: 150px;
+	align-self: flex-end;
+	border-radius: 5px;
+	padding-left: 5px;
+	height: 20px;
+	/*font-family: 'Gemunu Libre', sans-serif;*/
+}
+
+#interest_data input[type=text]::placeholder{
+	/*font-family: 'Gemunu Libre', sans-serif;*/
+}
+
+#settings{
+	height: 30px;
+	width: 30px;
+	cursor: pointer;
+	transition: all 0.3s;
+	margin: 10px;
+}
+
+#settings:hover{
+	transform: scale(1.2) rotateZ(90deg);
+}
+
+#container{
+	min-height: 300px;
+	width: calc(100% - 20px);
+	display: none;
+	flex-direction: column;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
+}
+
+#button_graph{
+	font-family: 'Gemunu Libre', sans-serif;
+	font-size: 1.5em;
+	display: none;
+	background-color: transparent;
+	border: solid 2px black;
+	color: black;
+}
+
+#data{
+	display: none;
+}
+
+canvas{
+	display: none;
+}
+
+/* GRÁFICO DE INTENSIDADE */ 
+table.intensify_graph{
+	height: auto;
+}
+
+#container h2{
+	margin-bottom: 5px;
+}
+#container h3{
+	margin: 5px auto;
+}
+
+table.intensify_graph .labelsX_intensify_graph{
+	/*border: solid 1px white;*/
+	padding: 5px;
+}
+
+table.intensify_graph .intensify{
+	text-align: center;
+}

@@ -1,0 +1,90 @@
+@import url('https://fonts.googleapis.com/css2?family=Gemunu+Libre&display=swap');
+@import './index.css';
+
+body{
+	background: #222;
+	color: white;
+}
+
+.themeButton{
+	height: 30px;
+	width: 30px;
+	background-image: url("./sun.png");
+	background-size: 100% auto;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-color: transparent;
+	filter: brightness(100.0);
+	position: fixed;
+	top: 5px;
+	left: 5px;
+	cursor: pointer;
+	opacity: 0.5;
+	transition: opacity 0.3s;
+}
+
+#painel .sendFile{
+	border: double 2px white;
+}
+
+#painel .sendFile:hover, #painel #button:hover, #button_graph:hover{
+	border-color: gold;
+	color: gold;
+}
+
+#painel #painel_csv::after{
+	background-color: white;
+}
+
+#painel_graph{
+	background-color: #111;
+	color: white;
+}
+
+#painel_graph::-webkit-scrollbar{
+	background: #444;
+}
+#painel_graph::-webkit-scrollbar-thumb{	
+	background-color: #999;
+}
+
+#closePainel_graph:hover{
+	background-color: rgba(255,255,255,0.3);
+}
+
+#out #dataset table tbody tr:hover{
+	background-color: #333;
+	box-shadow: inset 0px 1px 0px white, inset 0px -1px 0px white;
+}
+
+#out #dataset table tbody tr td:hover::after { 
+    background-color: #333;
+    box-shadow: inset 1px 0px 0px white, inset -1px 0px 0px white;
+}
+
+#settings{
+	filter: invert(100%);
+}
+
+#button_graph{
+	border: solid 2px white;
+	color: white;
+}
+.info span{
+	color: white;
+	border-color: white;
+}
+.info span:hover{
+	color: gold;
+	border-color: gold;
+}
+
+/*@override*/
+#painel_graph #addColor{
+	border-color: white;
+}
+/*@override*/
+#painel_graph #addColor:hover{
+	border-color: gold;
+	color: gold;
+}
