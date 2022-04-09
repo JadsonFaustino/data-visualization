@@ -13,7 +13,7 @@ body{
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-	font-family: "Arial";
+	font-family: "Eczar";
 	margin: 0;
 	padding: 0;
 	padding-bottom: 20px;
@@ -299,7 +299,7 @@ input[type=checkbox]{
 }
 
 #out h2{
-	margin-top: 0; 
+	margin-top: 0;
 	font-size: 1.5em;
 }
 
@@ -355,15 +355,15 @@ input[type=checkbox]{
 	position: relative;
 }
 
-#out #dataset table tbody tr td:hover::after { 
+#out #dataset table tbody tr td:hover::after {
     background-color: #ccc;
-    content: '';  
-    height: 10000px;    
+    content: '';
+    height: 10000px;
     left: 0;
-    position: absolute;  
+    position: absolute;
     top: -5000px;
     width: 100%;
-    z-index: -1;        
+    z-index: -1;
     box-shadow: inset 1px 0px 0px black, inset -1px 0px 0px black;
 }
 
@@ -544,7 +544,7 @@ canvas{
 	display: none;
 }
 
-/* GRÁFICO DE INTENSIDADE */ 
+/* GRÁFICO DE INTENSIDADE */
 table.intensify_graph{
 	height: auto;
 }
