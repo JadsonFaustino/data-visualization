@@ -9,7 +9,7 @@ body{
 .themeButton{
 	height: 30px;
 	width: 30px;
-	background-image: url("./sun.png");
+	background-image: url("icons/sun.png");
 	background-size: 100% auto;
 	background-position: center;
 	background-repeat: no-repeat;
@@ -44,7 +44,7 @@ body{
 #painel_graph::-webkit-scrollbar{
 	background: #444;
 }
-#painel_graph::-webkit-scrollbar-thumb{	
+#painel_graph::-webkit-scrollbar-thumb{
 	background-color: #999;
 }
 
@@ -57,7 +57,7 @@ body{
 	box-shadow: inset 0px 1px 0px white, inset 0px -1px 0px white;
 }
 
-#out #dataset table tbody tr td:hover::after { 
+#out #dataset table tbody tr td:hover::after {
     background-color: #333;
     box-shadow: inset 1px 0px 0px white, inset -1px 0px 0px white;
 }

@@ -4,7 +4,7 @@
 	<title>Pesquisa | Visualização de Dados</title>
 	<meta charset="utf-8">
 	<link rel="stylesheet" type="text/css" href="index.css" id="stylesheet">
-	<link rel="icon" type="image/png" href="./lupa.png"/>
+	<link rel="icon" type="image/png" href="icons/lupa.png"/>
 
 	<script src="https://code.highcharts.com/highcharts.js"></script>
 
@@ -16,8 +16,7 @@
 
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	    <script src="https://cdnjs.cloudflare.com/ajax/libs/regression/1.4.0/regression.min.js"></script>
-
-	    	<script src="https://code.highcharts.com/highcharts.js"></script>
+	    <script src="https://code.highcharts.com/highcharts.js"></script>
 			<script src="https://code.highcharts.com/modules/exporting.js"></script>
 			<script src="https://code.highcharts.com/modules/export-data.js"></script>
 			<script src="https://code.highcharts.com/modules/accessibility.js"></script>
@@ -45,7 +44,7 @@
 	<span id="buttonTheme" class="themeButton"></span>
 
 	<div id="painel">
-		
+
 		<div id="painel_csv">
 			<label>Faça upload de um arquivo CSV</label>
 			<input id="csv" type="file" accept=".csv">
@@ -56,7 +55,7 @@
 	</div>
 
 	<div id="data"></div>
-	
+
 	<div id="out">
 		<h2>Dados</h2>
 	    <div id="dataset">
@@ -91,7 +90,7 @@
 		</div>
 	</div>
 
-	<img src="settings.png" id="settings" class="openSettings">
+	<img src="icons/settings.png" id="settings" class="openSettings">
 
 	<div id="modal_settings">
 		<div id="painel_graph">
@@ -342,7 +341,7 @@
 						</table>
 					</td>
 					<td>
-						
+
 					</td>
 				</tr>
 
@@ -365,7 +364,7 @@
 							</tr>
 						</table>
 					</td>
-				
+
 				</tr>
 			</table>
 

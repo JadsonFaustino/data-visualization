@@ -48,15 +48,17 @@ function openSettings(){
 	}else{
 		painelGraph.style.display = "none";
 		buttonSet.className = "openSettings";
+		create_graph();
 	}
 }
 
 function closeSettings(e){
-	if(e.key==="Escape"){   
+	if(e.key==="Escape"){
 		var buttonSet = document.getElementById('settings');
 		var painelGraph = document.getElementById('modal_settings');
 		painelGraph.style.display = "none";
 		buttonSet.className = "openSettings";
+		create_graph();
 	}
 }
 document.addEventListener('keydown', closeSettings, false);
@@ -69,7 +71,7 @@ function filter(input){
 	// REGEX OF NUMBERS, COMMAS AND "-"
 	var er = /[^0-9,-]/gi;
 	// JUST ALLOW CHARACTERS OF REGEX
-	input.value = input.value.replaceAll(er, "");		
+	input.value = input.value.replaceAll(er, "");
 }
 
 function markColumnsCSV(input){
@@ -109,7 +111,7 @@ function markColumnsCSV(input){
 			if (columns[i].trim()==columnsCSV[j].innerText.trim()){
 				if(columnsCSV[j].className.indexOf(" marked")==-1){
 					columnsCSV[j].className = columnsCSV[j].className + " marked";
-				} 
+				}
 			}
 		}
 	}
@@ -147,7 +149,7 @@ function markRowsCSV(input){
 			if (rows[i].trim()==rowsCSV[j].innerText.trim()){
 				if(rowsCSV[j].className.indexOf(" marked")==-1){
 					rowsCSV[j].className = rowsCSV[j].className + " marked";
-				} 
+				}
 			}
 		}
 	}

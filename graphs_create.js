@@ -1,5 +1,5 @@
 function isNumeric(str) {
-	if (typeof str != "string") return false // we only process strings!  
+	if (typeof str != "string") return false // we only process strings!
 	return !isNaN(str) && !isNaN(parseFloat(str)); // ...and ensure strings of whitespace fail
 }
 
@@ -20,16 +20,16 @@ function create_graph(){
 
 	var legend_position_box = document.getElementById('legend_position');
 	var legend_position = legend_position_box.options[legend_position_box.selectedIndex].value;
-	
+
 	var title_box = document.getElementById('title_graph');
 	var title_graph = title_box.value;
 
 	var subtitle_box = document.getElementById('subtitle_graph');
 	var subtitle_graph = subtitle_box.value;
-	
+
 	var title_xbox = document.getElementById('title_xaxes');
 	var title_xaxes = title_xbox.value;
-	
+
 	var title_ybox = document.getElementById('title_yaxes');
 	var title_yaxes = title_ybox.value;
 
@@ -49,7 +49,7 @@ function create_graph(){
 	if(graph_type=="cylinder"){
 		graph3d = true;
 	}
-	
+
 
 	var colorsLine = document.querySelectorAll('.colorsSeries');
 	var colorArr = Array();
@@ -69,11 +69,11 @@ function create_graph(){
 
 	var rotationX = parseInt(document.querySelector('#rotationX').value);
 	var rotationY = parseInt(document.querySelector('#rotationY').value);
-	
+
 	var widthHeatMap = parseInt(document.querySelector('#widthHeatMap').value);
 
 	var regExp = /[a-zA-Z]/g;
-	            
+
 	if(parseFloat(jump)<0 || regExp.test(jump)){
 		window.alert("Número de saltos inválido");
 	}else{
@@ -128,7 +128,7 @@ function create_graph(){
 	// var checkColumnsSelected = document.getElementsByName('select_columns')[0].value.trim()!="";
 	var checkRowsSelected = select_rows!="";
 	var checkColumnsSelected = select_columns!="";
-	
+
 
 	// SELECTING ROWS
 
@@ -160,7 +160,7 @@ function create_graph(){
 
 
 	// SELECTING COLUMNS
-	
+
 		for(var i=0; i<document.getElementsByClassName("column").length; i++){
 			content = document.getElementsByClassName("column")[i].innerText;
 			content = content.split(',');
@@ -176,7 +176,7 @@ function create_graph(){
 		}
 
 		// DROP INDEXES COLUMN
-		columns.shift();	
+		columns.shift();
 
 		// start added
 		var desireColumns = Array();
@@ -200,7 +200,7 @@ function create_graph(){
 			seriesTitles.push(columns[i].shift());
 		}
 
-	
+
 		var array = Array();
 		for(var j=0; j<columns[0].length; j++){
 			array.push(j);
@@ -225,7 +225,7 @@ function create_graph(){
 		}
 
 		var seriesData = new Array();
-		
+
 		for(var i=0; i<seriesTitles.length; i++){
 			if(!removeOriginalLines){
 				var ser = new Object;
@@ -292,7 +292,7 @@ function create_graph(){
 
 		}
 
-		
+
 		// BEGIN OF DATA TREATMENT: "WORK WITH MEDIAN"
 
 		if(workWithMedian){
@@ -301,22 +301,22 @@ function create_graph(){
 			for (var i=0; i<seriesData.length; i++){
 
 				var sumForMedium = 0;
-				
+
 				for (var j=0; j<seriesData[i]["data"].length; j++){
-					
+
 					if (!isNaN(seriesData[i]["data"][j])){
 						sumForMedium += seriesData[i]["data"][j];
 					}
 
 				}
-				
+
 				var seriesMedian = sumForMedium/j;
-				
+
 				newCellData = new Object;
 				newCellData.name = seriesData[i]["name"];
 				newCellData.data = [seriesMedian];
 
-				newSeriesData.push(newCellData); 
+				newSeriesData.push(newCellData);
 			}
 
 			seriesData = newSeriesData;
@@ -359,7 +359,7 @@ function create_graph(){
 				table.style.alignItems = "flex-end";
 				document.getElementById('container').style.width = "auto";
 				document.getElementById('container').style.alignItems = "flex-start";
-				head.appendChild(tdHead);			
+				head.appendChild(tdHead);
 			}
 
 		}else{
@@ -369,7 +369,7 @@ function create_graph(){
 				var tdData = document.createTextNode(String(seriesData[i]['name']).trim());
 				tdHead.appendChild(tdData);
 				tdHead.className = "labelsX_intensify_graph";
-				head.appendChild(tdHead);			
+				head.appendChild(tdHead);
 			}
 
 		}
@@ -460,7 +460,7 @@ function create_graph(){
 			} // END FOR
 
 		} // END ELSE
-		
+
 		// COLORING BY INTENSITY
 		var tds2color = table.getElementsByClassName("intensify");
 		for(var k=0; k<tds2color.length; k++){
@@ -472,7 +472,7 @@ function create_graph(){
 			// if(inverted){
 			// 	tds2color[k].style.borderWidth = "0px";
 			// }
-			
+
 			// SHOWING OR NOT DATA IN EACH CELL
 			if(!data_inline){
 				tds2color[k].innerText = "";
@@ -505,7 +505,7 @@ function create_graph(){
 		document.getElementById('container').appendChild(table);
 
 		var legend_intensity_graph = document.createElement("div");
-		
+
 		var minLabel = document.createElement("label");
 		var minTextLabel = document.createTextNode(min);
 		minLabel.style.padding = "10px"
@@ -515,7 +515,7 @@ function create_graph(){
 		var maxTextLabel = document.createTextNode(max);
 		maxLabel.style.padding = "10px"
 		maxLabel.appendChild(maxTextLabel);
-		
+
 		legend_intensity_graph.style.display = "flex";
 		legend_intensity_graph.style.flexDirection = "row";
 		legend_intensity_graph.style.width = table.offsetWidth+"px";
@@ -589,7 +589,7 @@ function create_graph(){
 		        	color: textColor
 		        }
 		    },
-			
+
 			subtitle: {
 		        text: subtitle_graph,
 		        style: {
